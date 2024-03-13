@@ -4,18 +4,15 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>DemonCam-Swift-Metal.xcscheme_^#shared#^_</key>
+		<key>SwiftAI-Xcode-Ext.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>SwiftAI-Xcode.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
-		</dict>
-	</dict>
-	<key>SuppressBuildableAutocreation</key>
-	<dict>
-		<key>B9E3B6D92B98488100CFB089</key>
-		<dict>
-			<key>primary</key>
-			<true/>
 		</dict>
 	</dict>
 </dict>

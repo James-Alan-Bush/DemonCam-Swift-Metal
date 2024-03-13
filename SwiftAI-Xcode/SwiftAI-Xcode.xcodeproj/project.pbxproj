@@ -1,0 +1,545 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B91994332BA07A28008594A8 /* SwiftAI_XcodeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91994322BA07A28008594A8 /* SwiftAI_XcodeApp.swift */; };
+		B91994352BA07A28008594A8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91994342BA07A28008594A8 /* ContentView.swift */; };
+		B91994372BA07A28008594A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B91994362BA07A28008594A8 /* Assets.xcassets */; };
+		B919943A2BA07A28008594A8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B91994392BA07A28008594A8 /* Preview Assets.xcassets */; };
+		B919944D2BA07A43008594A8 /* SourceEditorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B919944C2BA07A43008594A8 /* SourceEditorExtension.swift */; };
+		B919944F2BA07A43008594A8 /* SourceEditorCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = B919944E2BA07A43008594A8 /* SourceEditorCommand.swift */; };
+		B91994542BA07A43008594A8 /* SwiftAI-Xcode-Ext.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = B91994452BA07A43008594A8 /* SwiftAI-Xcode-Ext.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B919945D2BA07A62008594A8 /* XcodeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B91994592BA07A53008594A8 /* XcodeKit.framework */; };
+		B919945E2BA07A62008594A8 /* XcodeKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B91994592BA07A53008594A8 /* XcodeKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B91994602BA07A69008594A8 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B91994472BA07A43008594A8 /* Cocoa.framework */; };
+		B9E595662BA0B41100267974 /* ChatData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E595652BA0B41100267974 /* ChatData.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B91994522BA07A43008594A8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B91994272BA07A27008594A8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B91994442BA07A43008594A8;
+			remoteInfo = "SwiftAI-Xcode-Ext";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B91994582BA07A43008594A8 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				B91994542BA07A43008594A8 /* SwiftAI-Xcode-Ext.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B919945F2BA07A62008594A8 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B919945E2BA07A62008594A8 /* XcodeKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		B919942F2BA07A28008594A8 /* SwiftAI-Xcode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftAI-Xcode.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B91994322BA07A28008594A8 /* SwiftAI_XcodeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftAI_XcodeApp.swift; sourceTree = "<group>"; };
+		B91994342BA07A28008594A8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B91994362BA07A28008594A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B91994392BA07A28008594A8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B919943B2BA07A28008594A8 /* SwiftAI_Xcode.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftAI_Xcode.entitlements; sourceTree = "<group>"; };
+		B91994452BA07A43008594A8 /* SwiftAI-Xcode-Ext.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "SwiftAI-Xcode-Ext.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B91994472BA07A43008594A8 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		B91994492BA07A43008594A8 /* XcodeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XcodeKit.framework; path = Library/Frameworks/XcodeKit.framework; sourceTree = DEVELOPER_DIR; };
+		B919944C2BA07A43008594A8 /* SourceEditorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceEditorExtension.swift; sourceTree = "<group>"; };
+		B919944E2BA07A43008594A8 /* SourceEditorCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceEditorCommand.swift; sourceTree = "<group>"; };
+		B91994502BA07A43008594A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B91994512BA07A43008594A8 /* SwiftAI_Xcode_Ext.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftAI_Xcode_Ext.entitlements; sourceTree = "<group>"; };
+		B91994592BA07A53008594A8 /* XcodeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XcodeKit.framework; path = Library/Frameworks/XcodeKit.framework; sourceTree = DEVELOPER_DIR; };
+		B9E595652BA0B41100267974 /* ChatData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatData.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B919942C2BA07A27008594A8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B91994422BA07A43008594A8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B91994602BA07A69008594A8 /* Cocoa.framework in Frameworks */,
+				B919945D2BA07A62008594A8 /* XcodeKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B91994262BA07A27008594A8 = {
+			isa = PBXGroup;
+			children = (
+				B91994312BA07A28008594A8 /* SwiftAI-Xcode */,
+				B919944B2BA07A43008594A8 /* SwiftAI-Xcode-Ext */,
+				B91994462BA07A43008594A8 /* Frameworks */,
+				B91994302BA07A28008594A8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B91994302BA07A28008594A8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B919942F2BA07A28008594A8 /* SwiftAI-Xcode.app */,
+				B91994452BA07A43008594A8 /* SwiftAI-Xcode-Ext.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B91994312BA07A28008594A8 /* SwiftAI-Xcode */ = {
+			isa = PBXGroup;
+			children = (
+				B91994322BA07A28008594A8 /* SwiftAI_XcodeApp.swift */,
+				B91994342BA07A28008594A8 /* ContentView.swift */,
+				B91994362BA07A28008594A8 /* Assets.xcassets */,
+				B919943B2BA07A28008594A8 /* SwiftAI_Xcode.entitlements */,
+				B91994382BA07A28008594A8 /* Preview Content */,
+			);
+			path = "SwiftAI-Xcode";
+			sourceTree = "<group>";
+		};
+		B91994382BA07A28008594A8 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				B91994392BA07A28008594A8 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B91994462BA07A43008594A8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B91994592BA07A53008594A8 /* XcodeKit.framework */,
+				B91994472BA07A43008594A8 /* Cocoa.framework */,
+				B91994492BA07A43008594A8 /* XcodeKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B919944B2BA07A43008594A8 /* SwiftAI-Xcode-Ext */ = {
+			isa = PBXGroup;
+			children = (
+				B919944C2BA07A43008594A8 /* SourceEditorExtension.swift */,
+				B919944E2BA07A43008594A8 /* SourceEditorCommand.swift */,
+				B9E595652BA0B41100267974 /* ChatData.swift */,
+				B91994512BA07A43008594A8 /* SwiftAI_Xcode_Ext.entitlements */,
+				B91994502BA07A43008594A8 /* Info.plist */,
+			);
+			path = "SwiftAI-Xcode-Ext";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B919942E2BA07A27008594A8 /* SwiftAI-Xcode */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B919943E2BA07A28008594A8 /* Build configuration list for PBXNativeTarget "SwiftAI-Xcode" */;
+			buildPhases = (
+				B919942B2BA07A27008594A8 /* Sources */,
+				B919942C2BA07A27008594A8 /* Frameworks */,
+				B919942D2BA07A27008594A8 /* Resources */,
+				B91994582BA07A43008594A8 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B91994532BA07A43008594A8 /* PBXTargetDependency */,
+			);
+			name = "SwiftAI-Xcode";
+			productName = "SwiftAI-Xcode";
+			productReference = B919942F2BA07A28008594A8 /* SwiftAI-Xcode.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B91994442BA07A43008594A8 /* SwiftAI-Xcode-Ext */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B91994552BA07A43008594A8 /* Build configuration list for PBXNativeTarget "SwiftAI-Xcode-Ext" */;
+			buildPhases = (
+				B91994412BA07A43008594A8 /* Sources */,
+				B91994422BA07A43008594A8 /* Frameworks */,
+				B91994432BA07A43008594A8 /* Resources */,
+				B919945F2BA07A62008594A8 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SwiftAI-Xcode-Ext";
+			productName = "SwiftAI-Xcode-Ext";
+			productReference = B91994452BA07A43008594A8 /* SwiftAI-Xcode-Ext.appex */;
+			productType = "com.apple.product-type.xcode-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B91994272BA07A27008594A8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1530;
+				LastUpgradeCheck = 1530;
+				TargetAttributes = {
+					B919942E2BA07A27008594A8 = {
+						CreatedOnToolsVersion = 15.3;
+					};
+					B91994442BA07A43008594A8 = {
+						CreatedOnToolsVersion = 15.3;
+					};
+				};
+			};
+			buildConfigurationList = B919942A2BA07A27008594A8 /* Build configuration list for PBXProject "SwiftAI-Xcode" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B91994262BA07A27008594A8;
+			productRefGroup = B91994302BA07A28008594A8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B919942E2BA07A27008594A8 /* SwiftAI-Xcode */,
+				B91994442BA07A43008594A8 /* SwiftAI-Xcode-Ext */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B919942D2BA07A27008594A8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B919943A2BA07A28008594A8 /* Preview Assets.xcassets in Resources */,
+				B91994372BA07A28008594A8 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B91994432BA07A43008594A8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B919942B2BA07A27008594A8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B91994352BA07A28008594A8 /* ContentView.swift in Sources */,
+				B91994332BA07A28008594A8 /* SwiftAI_XcodeApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B91994412BA07A43008594A8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9E595662BA0B41100267974 /* ChatData.swift in Sources */,
+				B919944D2BA07A43008594A8 /* SourceEditorExtension.swift in Sources */,
+				B919944F2BA07A43008594A8 /* SourceEditorCommand.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B91994532BA07A43008594A8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B91994442BA07A43008594A8 /* SwiftAI-Xcode-Ext */;
+			targetProxy = B91994522BA07A43008594A8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		B919943C2BA07A28008594A8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B919943D2BA07A28008594A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		B919943F2BA07A28008594A8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "SwiftAI-Xcode/SwiftAI_Xcode.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SwiftAI-Xcode/Preview Content\"";
+				DEVELOPMENT_TEAM = N9987K9442;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "bush.alan.james..SwiftAI-Xcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		B91994402BA07A28008594A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "SwiftAI-Xcode/SwiftAI_Xcode.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SwiftAI-Xcode/Preview Content\"";
+				DEVELOPMENT_TEAM = N9987K9442;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "bush.alan.james..SwiftAI-Xcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		B91994562BA07A43008594A8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "SwiftAI-Xcode-Ext/SwiftAI_Xcode_Ext.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = N9987K9442;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "SwiftAI-Xcode-Ext/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "SwiftAI-Xcode-Ext";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "bush.alan.james..SwiftAI-Xcode.SwiftAI-Xcode-Ext";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		B91994572BA07A43008594A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "SwiftAI-Xcode-Ext/SwiftAI_Xcode_Ext.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = N9987K9442;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "SwiftAI-Xcode-Ext/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "SwiftAI-Xcode-Ext";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "bush.alan.james..SwiftAI-Xcode.SwiftAI-Xcode-Ext";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B919942A2BA07A27008594A8 /* Build configuration list for PBXProject "SwiftAI-Xcode" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B919943C2BA07A28008594A8 /* Debug */,
+				B919943D2BA07A28008594A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B919943E2BA07A28008594A8 /* Build configuration list for PBXNativeTarget "SwiftAI-Xcode" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B919943F2BA07A28008594A8 /* Debug */,
+				B91994402BA07A28008594A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B91994552BA07A43008594A8 /* Build configuration list for PBXNativeTarget "SwiftAI-Xcode-Ext" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B91994562BA07A43008594A8 /* Debug */,
+				B91994572BA07A43008594A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B91994272BA07A27008594A8 /* Project object */;
+}
