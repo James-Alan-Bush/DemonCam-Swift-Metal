@@ -144,13 +144,10 @@ class CameraManager: NSObject, ObservableObject, AVCaptureVideoDataOutputSampleB
         
         DispatchQueue.main.async {
             if UIDevice.current.userInterfaceIdiom == .pad {
-                print(".pad")
                 self.image = UIImage(cgImage: newImage, scale: 1.0, orientation: .up)
             } else if UIDevice.current.userInterfaceIdiom == .phone {
-                print(".phone")
                 self.image = UIImage(cgImage: newImage, scale: 1.0, orientation: .right)
             } else if UIDevice.current.userInterfaceIdiom == .mac {
-                print(".mac")
                 self.image = UIImage(cgImage: newImage, scale: 1.0, orientation: .right)
             }
             
