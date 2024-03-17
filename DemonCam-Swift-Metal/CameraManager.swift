@@ -25,6 +25,24 @@ class CameraManager: NSObject, ObservableObject, AVCaptureVideoDataOutputSampleB
     
     @Published var lensPosition: Float = 0.5 // Default lens position
     
+    @Published var deviceNames: [String] = []
+    @Published var currentDeviceName: String?
+    
+    func fetchDevices() {
+        let discoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInTrueDepthCamera, .builtInDualCamera, .builtInWideAngleCamera], mediaType: .video, position: .back)
+        
+        let devices = discoverySession.devices
+        deviceNames = devices.map {
+            return $0.localizedName
+        }
+        
+        currentDeviceName = captureDevice?.localizedName
+    }
+    
+    func setCurrentDevice(name: String) {
+        currentDeviceName = name
+    }
+    
     // Method to adjust lens position
     func setLensPosition(_ position: Float) {
         guard let device = captureDevice else { return }
@@ -121,18 +139,23 @@ class CameraManager: NSObject, ObservableObject, AVCaptureVideoDataOutputSampleB
         let height = CVPixelBufferGetHeight(imageBuffer)
         
         let colorSpace = CGColorSpaceCreateDeviceRGB()
-        guard var newContext = CGContext(data: baseAddress, width: Int(width), height: Int(height), bitsPerComponent: 8, bytesPerRow: Int(bytesPerRow), space: colorSpace, bitmapInfo: CGImageAlphaInfo.premultipliedFirst.rawValue | CGBitmapInfo.byteOrder32Little.rawValue) else { return }
+        guard let newContext = CGContext(data: baseAddress, width: Int(width), height: Int(height), bitsPerComponent: 8, bytesPerRow: Int(bytesPerRow), space: colorSpace, bitmapInfo: CGImageAlphaInfo.premultipliedFirst.rawValue | CGBitmapInfo.byteOrder32Little.rawValue) else { return }
         guard let newImage = newContext.makeImage() else { return }
-
-        DispatchQueue.main.async {
-#if targetEnvironment(macCatalyst)
-        self.image = UIImage(cgImage: newImage, scale: 1.0, orientation: .up)
-#else
-        self.image = UIImage(cgImage: newImage, scale: 1.0, orientation: .right)
-#endif
-        }
         
-        CVPixelBufferUnlockBaseAddress(imageBuffer, CVPixelBufferLockFlags(rawValue: 0))
+        DispatchQueue.main.async {
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                print(".pad")
+                self.image = UIImage(cgImage: newImage, scale: 1.0, orientation: .up)
+            } else if UIDevice.current.userInterfaceIdiom == .phone {
+                print(".phone")
+                self.image = UIImage(cgImage: newImage, scale: 1.0, orientation: .right)
+            } else if UIDevice.current.userInterfaceIdiom == .mac {
+                print(".mac")
+                self.image = UIImage(cgImage: newImage, scale: 1.0, orientation: .right)
+            }
+            
+            CVPixelBufferUnlockBaseAddress(imageBuffer, CVPixelBufferLockFlags(rawValue: 0))
+        }
     }
     
     // RECORDING
@@ -180,6 +203,44 @@ class CameraManager: NSObject, ObservableObject, AVCaptureVideoDataOutputSampleB
             }
         }
     }
+}
+
+extension CameraManager {
     
+    // Assuming your CameraManager already has a captureSession property
+    //    @Published var deviceNames: [String] = []
     
+    // Method to fetch and update device names
+    func fetchAvailableDevices() {
+        let discoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInTrueDepthCamera, .builtInDualCamera, .builtInWideAngleCamera], mediaType: .video, position: .unspecified)
+        let devices = discoverySession.devices
+        self.deviceNames = devices.map { $0.localizedName }
+        
+        // If you want to automatically select the first device or handle initial selection, add that logic here
+    }
+    
+    // Method to select a device by its name
+    func selectDevice(selectedDeviceName: String) {
+        let discoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInTrueDepthCamera, .builtInDualCamera, .builtInWideAngleCamera], mediaType: .video, position: .unspecified)
+        guard let device = discoverySession.devices.first(where: { $0.localizedName == selectedDeviceName }) else { return }
+        
+        do {
+            let newInput = try AVCaptureDeviceInput(device: device)
+            
+            guard let captureSession = self.captureSession else { return }
+            captureSession.beginConfiguration()
+            
+            if let currentInput = captureSession.inputs.first(where: { ($0 as? AVCaptureDeviceInput)?.device.localizedName == selectedDeviceName }) {
+                captureSession.removeInput(currentInput)
+            }
+            
+            if captureSession.canAddInput(newInput) {
+                captureSession.addInput(newInput)
+            }
+            
+            captureSession.commitConfiguration()
+        } catch let error {
+            print("Failed to switch capture devices: \(error.localizedDescription)")
+        }
+    }
 }

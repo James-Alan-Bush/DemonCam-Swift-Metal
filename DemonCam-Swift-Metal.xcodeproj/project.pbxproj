@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B9227DAF2BA6B4FD0082449D /* VariableBlur.metal in Sources */ = {isa = PBXBuildFile; fileRef = B9227DAE2BA6B4FD0082449D /* VariableBlur.metal */; };
+		B9227DB12BA740440082449D /* ChatGPT.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9227DB02BA740440082449D /* ChatGPT.swift */; };
 		B93A5D072BA1645A000F5263 /* HighlightsAndShadows.metal in Sources */ = {isa = PBXBuildFile; fileRef = B93A5D062BA1645A000F5263 /* HighlightsAndShadows.metal */; };
 		B9E3B6DE2B98488100CFB089 /* DemonCam_Swift_MetalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E3B6DD2B98488100CFB089 /* DemonCam_Swift_MetalApp.swift */; };
 		B9E3B6E02B98488100CFB089 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E3B6DF2B98488100CFB089 /* ContentView.swift */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B9227DAE2BA6B4FD0082449D /* VariableBlur.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; name = VariableBlur.metal; path = Shaders/VariableBlur.metal; sourceTree = "<group>"; };
+		B9227DB02BA740440082449D /* ChatGPT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGPT.swift; sourceTree = "<group>"; };
 		B93A5D052BA10E37000F5263 /* DemonCam-Swift-Metal.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "DemonCam-Swift-Metal.entitlements"; sourceTree = "<group>"; };
 		B93A5D062BA1645A000F5263 /* HighlightsAndShadows.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; name = HighlightsAndShadows.metal; path = Shaders/HighlightsAndShadows.metal; sourceTree = "<group>"; wrapsLines = 0; };
 		B9E3B6DA2B98488100CFB089 /* DemonCam-Swift-Metal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DemonCam-Swift-Metal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -24,7 +28,7 @@
 		B9E3B6DF2B98488100CFB089 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		B9E3B6E12B98488200CFB089 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B9E3B6E42B98488200CFB089 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		B9E3B6EB2B98491800CFB089 /* CameraManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
+		B9E3B6EB2B98491800CFB089 /* CameraManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		B9E3B6ED2B984F5000CFB089 /* Desaturate.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; name = Desaturate.metal; path = Shaders/Desaturate.metal; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,7 +67,9 @@
 				B9E3B6EB2B98491800CFB089 /* CameraManager.swift */,
 				B9E3B6DF2B98488100CFB089 /* ContentView.swift */,
 				B9E3B6ED2B984F5000CFB089 /* Desaturate.metal */,
+				B9227DB02BA740440082449D /* ChatGPT.swift */,
 				B93A5D062BA1645A000F5263 /* HighlightsAndShadows.metal */,
+				B9227DAE2BA6B4FD0082449D /* VariableBlur.metal */,
 				B9E3B6E12B98488200CFB089 /* Assets.xcassets */,
 				B9E3B6E32B98488200CFB089 /* Preview Content */,
 			);
@@ -148,8 +154,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9227DAF2BA6B4FD0082449D /* VariableBlur.metal in Sources */,
 				B9E3B6E02B98488100CFB089 /* ContentView.swift in Sources */,
 				B9E3B6EC2B98491800CFB089 /* CameraManager.swift in Sources */,
+				B9227DB12BA740440082449D /* ChatGPT.swift in Sources */,
 				B9E3B6DE2B98488100CFB089 /* DemonCam_Swift_MetalApp.swift in Sources */,
 				B93A5D072BA1645A000F5263 /* HighlightsAndShadows.metal in Sources */,
 				B9E3B6EE2B984F5000CFB089 /* Desaturate.metal in Sources */,
@@ -305,8 +313,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "bush.alan.james.DemonCam-Swift-Metal.DemonCam-Swift-Metal";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -341,8 +351,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "bush.alan.james.DemonCam-Swift-Metal.DemonCam-Swift-Metal";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
